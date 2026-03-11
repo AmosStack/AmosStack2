@@ -1,6 +1,6 @@
-# Amos Muddy Portfolio
+# AmosStack Portfolio
 
-Modern personal portfolio website for **Amos Muddy** built as a high-performance static site with advanced animations and glassmorphism design.
+Modern personal portfolio website for **AmosStack** built as a high-performance static site with advanced animations and glassmorphism design.
 
 ## Overview
 

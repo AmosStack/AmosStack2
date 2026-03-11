@@ -192,10 +192,9 @@
    * Hero animated nodes network
    */
   const initHeroNetwork = () => {
-    const hero = select('#hero')
     const canvas = select('#hero-network')
 
-    if (!hero || !canvas) {
+    if (!canvas) {
       return
     }
 
@@ -226,8 +225,8 @@
     }
 
     const resize = () => {
-      width = hero.clientWidth
-      height = hero.clientHeight
+      width = window.innerWidth
+      height = window.innerHeight
 
       canvas.width = Math.floor(width * dpr)
       canvas.height = Math.floor(height * dpr)

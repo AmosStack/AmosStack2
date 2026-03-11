@@ -55,27 +55,11 @@ Premium portfolio featuring a contemporary design system with:
 
 Because this is a static site, you can run it with any HTTP server. The canvas animation and collision physics work instantly with no build step required.
 
-### Option 1: VS Code Live Server (Recommended)
+### VS Code Live Server (Recommended)
 1. Open folder in VS Code
 2. Install **Live Server** extension
 3. Right-click `index.html` → "Open with Live Server"
 4. Browser opens at `http://localhost:5500`
-
-### Option 2: Python HTTP Server
-```bash
-cd d:\current\Amos-codes-cloud.github.io
-python -m http.server 8000
-```
-Then open: `http://localhost:8000`
-
-### Option 3: Node.js http-server
-```bash
-npm install -g http-server
-http-server
-```
-Then open: `http://localhost:8080`
-
-**Note**: All animations, collision physics, and theme switching work immediately — no compilation needed.
 
 ## Customization Guide
 
@@ -125,11 +109,7 @@ All sections (About, Projects, Skills, Resume, Contact) use glass styling:
 backdrop-filter: blur(10px);                       /* Adjust blur intensity */
 ```
 
-### 7) Login Form
-Edit `form.html` and `assets/form-style.css`:
-- Update form fields and validation logic
-- Background image: `assets/img/Screenshot 2026-03-11 103712.png`
-- Glass-effect containers use same backdrop-filter system
+
 
 ## Accessibility & Performance
 
@@ -177,4 +157,4 @@ Current deployment: Live on GitHub Pages at custom domain (CNAME configured)
 
 - **Amos Muddy (AmosStack)**
 - GitHub: https://github.com/AmosStack
-- Portfolio: https://amos-muddy.github.io
+- Portfolio: https://masterplanjr.netlify.app

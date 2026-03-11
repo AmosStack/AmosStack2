@@ -295,21 +295,186 @@
   window.addEventListener('load', initHeroNetwork)
 
   /**
-   * Skills animation
+   * Skills orbit movement
    */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
+  const initSkillsOrbit = () => {
+    const orbit = select('.skills-orbit')
+    if (!orbit) {
+      return
+    }
+
+    const nodes = [...orbit.querySelectorAll('.skill-node')]
+    if (!nodes.length) {
+      return
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let items = []
+    let frameId = null
+    let orbitWidth = 0
+    let orbitHeight = 0
+
+    const randomBetween = (min, max) => min + Math.random() * (max - min)
+
+    const applyPosition = (item) => {
+      item.element.style.setProperty('--x', `${item.x}px`)
+      item.element.style.setProperty('--y', `${item.y}px`)
+    }
+
+    const intersects = (first, second) => {
+      return !(
+        first.x + first.width < second.x ||
+        first.x > second.x + second.width ||
+        first.y + first.height < second.y ||
+        first.y > second.y + second.height
+      )
+    }
+
+    const createItem = (element) => {
+      const angle = Math.random() * Math.PI * 2
+      const speed = randomBetween(0.35, 0.7)
+      const width = element.offsetWidth
+      const height = element.offsetHeight
+
+      return {
+        element,
+        width,
+        height,
+        x: 0,
+        y: 0,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed
       }
-    })
+    }
+
+    const placeItems = () => {
+      items.forEach((item, index) => {
+        let attempts = 0
+        let placed = false
+
+        while (!placed && attempts < 160) {
+          item.x = randomBetween(0, Math.max(orbitWidth - item.width, 1))
+          item.y = randomBetween(0, Math.max(orbitHeight - item.height, 1))
+          placed = items.slice(0, index).every((otherItem) => !intersects(item, otherItem))
+          attempts += 1
+        }
+
+        if (!placed) {
+          item.x = Math.max((orbitWidth - item.width) / 2 + randomBetween(-24, 24), 0)
+          item.y = Math.max((orbitHeight - item.height) / 2 + randomBetween(-24, 24), 0)
+        }
+
+        applyPosition(item)
+      })
+    }
+
+    const resize = () => {
+      orbitWidth = orbit.clientWidth
+      orbitHeight = orbit.clientHeight
+      items = nodes.map((node) => createItem(node))
+      placeItems()
+    }
+
+    const keepInBounds = (item) => {
+      if (item.x <= 0) {
+        item.x = 0
+        item.vx = Math.abs(item.vx)
+      }
+
+      if (item.x + item.width >= orbitWidth) {
+        item.x = Math.max(orbitWidth - item.width, 0)
+        item.vx = -Math.abs(item.vx)
+      }
+
+      if (item.y <= 0) {
+        item.y = 0
+        item.vy = Math.abs(item.vy)
+      }
+
+      if (item.y + item.height >= orbitHeight) {
+        item.y = Math.max(orbitHeight - item.height, 0)
+        item.vy = -Math.abs(item.vy)
+      }
+    }
+
+    const resolveCollision = (first, second) => {
+      const firstCenterX = first.x + first.width / 2
+      const firstCenterY = first.y + first.height / 2
+      const secondCenterX = second.x + second.width / 2
+      const secondCenterY = second.y + second.height / 2
+
+      let deltaX = secondCenterX - firstCenterX
+      let deltaY = secondCenterY - firstCenterY
+      const distance = Math.hypot(deltaX, deltaY) || 1
+      const firstRadius = Math.max(first.width, first.height) / 2
+      const secondRadius = Math.max(second.width, second.height) / 2
+      const minDistance = firstRadius + secondRadius
+
+      if (distance >= minDistance) {
+        return
+      }
+
+      deltaX /= distance
+      deltaY /= distance
+
+      const overlap = minDistance - distance
+      first.x -= deltaX * overlap * 0.5
+      first.y -= deltaY * overlap * 0.5
+      second.x += deltaX * overlap * 0.5
+      second.y += deltaY * overlap * 0.5
+
+      const firstNormalVelocity = first.vx * deltaX + first.vy * deltaY
+      const secondNormalVelocity = second.vx * deltaX + second.vy * deltaY
+      const firstTangentX = first.vx - firstNormalVelocity * deltaX
+      const firstTangentY = first.vy - firstNormalVelocity * deltaY
+      const secondTangentX = second.vx - secondNormalVelocity * deltaX
+      const secondTangentY = second.vy - secondNormalVelocity * deltaY
+
+      first.vx = firstTangentX + secondNormalVelocity * deltaX
+      first.vy = firstTangentY + secondNormalVelocity * deltaY
+      second.vx = secondTangentX + firstNormalVelocity * deltaX
+      second.vy = secondTangentY + firstNormalVelocity * deltaY
+
+      keepInBounds(first)
+      keepInBounds(second)
+    }
+
+    const tick = () => {
+      items.forEach((item) => {
+        item.x += item.vx
+        item.y += item.vy
+        keepInBounds(item)
+      })
+
+      for (let index = 0; index < items.length; index += 1) {
+        for (let nextIndex = index + 1; nextIndex < items.length; nextIndex += 1) {
+          resolveCollision(items[index], items[nextIndex])
+        }
+      }
+
+      items.forEach((item) => applyPosition(item))
+      frameId = window.requestAnimationFrame(tick)
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        window.cancelAnimationFrame(frameId)
+        frameId = null
+      } else if (!prefersReducedMotion && !frameId) {
+        frameId = window.requestAnimationFrame(tick)
+      }
+    }
+
+    resize()
+
+    if (!prefersReducedMotion) {
+      frameId = window.requestAnimationFrame(tick)
+      document.addEventListener('visibilitychange', handleVisibilityChange)
+      window.addEventListener('resize', resize)
+    }
   }
+
+  window.addEventListener('load', initSkillsOrbit)
 
   /**
    * Porfolio isotope and filter

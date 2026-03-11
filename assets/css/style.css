@@ -1194,26 +1194,202 @@ section {
   background: linear-gradient(90deg, #020617, #1e293b);
 }
 
-.skills .progress {
-  margin-bottom: 18px;
-}
-
-.skills .progress .skill {
-  font-size: 0.88rem;
-  letter-spacing: 0.02em;
-  color: var(--text-2);
-}
-
-.skills .progress-bar-wrap {
-  height: 11px;
-  border-radius: 999px;
-  background: var(--card-border);
+.skills-orbit {
+  position: relative;
+  min-height: 430px;
   overflow: hidden;
+  padding: 12px;
 }
 
-.skills .progress-bar {
+.skill-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: #e2e8f0;
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid var(--accent-soft, rgba(147, 197, 253, 0.38));
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--brand-500), #60a5fa);
+  padding: 10px 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 12px var(--accent-soft, rgba(96, 165, 250, 0.28));
+  animation: skill-fade 3.5s ease-in-out infinite;
+  transform: translate3d(var(--x, 0), var(--y, 0), 0) scale(var(--scale, 1));
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  will-change: transform, opacity;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.skill-html {
+  --accent: #f97316;
+  --accent-soft: rgba(249, 115, 22, 0.4);
+}
+
+.skill-css {
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.4);
+}
+
+.skill-javascript {
+  --accent: #facc15;
+  --accent-soft: rgba(250, 204, 21, 0.38);
+}
+
+.skill-react {
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.4);
+}
+
+.skill-nodejs {
+  --accent: #22c55e;
+  --accent-soft: rgba(34, 197, 94, 0.38);
+}
+
+.skill-flutter {
+  --accent: #06b6d4;
+  --accent-soft: rgba(6, 182, 212, 0.38);
+}
+
+.skill-dart {
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.38);
+}
+
+.skill-postgresql {
+  --accent: #8b5cf6;
+  --accent-soft: rgba(139, 92, 246, 0.38);
+}
+
+.skill-mysql {
+  --accent: #0ea5e9;
+  --accent-soft: rgba(14, 165, 233, 0.38);
+}
+
+.skill-java {
+  --accent: #f59e0b;
+  --accent-soft: rgba(245, 158, 11, 0.38);
+}
+
+.skill-python {
+  --accent: #84cc16;
+  --accent-soft: rgba(132, 204, 22, 0.38);
+}
+
+.skill-django {
+  --accent: #a855f7;
+  --accent-soft: rgba(168, 85, 247, 0.38);
+}
+
+.skill-php {
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.38);
+}
+
+.skill-github {
+  --accent: #94a3b8;
+  --accent-soft: rgba(148, 163, 184, 0.38);
+}
+
+.skill-git {
+  --accent: #ef4444;
+  --accent-soft: rgba(239, 68, 68, 0.38);
+}
+
+.skill-wordpress {
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.38);
+}
+
+.skill-design {
+  --accent: #f472b6;
+  --accent-soft: rgba(244, 114, 182, 0.38);
+}
+
+.skill-node::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 999px;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0), var(--accent-soft, rgba(191, 219, 254, 0.45)), rgba(255, 255, 255, 0));
+  opacity: 0;
+  pointer-events: none;
+  animation: skill-shine 3s linear infinite;
+}
+
+.skill-node i {
+  font-size: 1.2rem;
+  color: var(--accent, #93c5fd);
+  text-shadow: 0 0 14px var(--accent-soft, rgba(96, 165, 250, 0.6));
+}
+
+.skill-node span {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.skill-node:hover {
+  --scale: 1.14;
+  border-color: var(--accent, rgba(191, 219, 254, 0.85));
+  box-shadow: 0 0 28px var(--accent-soft, rgba(96, 165, 250, 0.88)), 0 0 56px var(--accent-soft, rgba(59, 130, 246, 0.45));
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.skills-orbit .skill-node:nth-child(odd) {
+  animation-delay: -1.3s;
+}
+
+.skills-orbit .skill-node:nth-child(3n) {
+  animation-delay: -2.2s;
+}
+
+@keyframes skill-fade {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes skill-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(-26%);
+  }
+
+  35% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(26%);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-orbit {
+    min-height: 520px;
+  }
+
+  .skill-node {
+    padding: 8px 12px;
+  }
+
+  .skill-node i {
+    font-size: 1.05rem;
+  }
+
+  .skill-node span {
+    font-size: 0.82rem;
+  }
 }
 
 .resume .resume-item {

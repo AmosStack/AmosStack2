@@ -808,6 +808,9 @@ section {
   --hero-text: #ffffff;
   --hero-accent: #93c5fd;
   --card-border: #e2e8f0;
+  --glass-panel-bg: rgba(255, 255, 255, 0.15);
+  --glass-panel-border: rgba(255, 255, 255, 0.3);
+  --glass-panel-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
   --footer-bg: #0f172a;
   --footer-text: #e2e8f0;
   --footer-link: #bfdbfe;
@@ -830,6 +833,9 @@ body.dark-mode {
   --hero-text: #f8fafc;
   --hero-accent: #60a5fa;
   --card-border: #334155;
+  --glass-panel-bg: rgba(15, 23, 42, 0.28);
+  --glass-panel-border: rgba(148, 163, 184, 0.25);
+  --glass-panel-shadow: 0 8px 32px rgba(2, 6, 23, 0.38);
   --footer-bg: #020617;
   --footer-text: #cbd5e1;
   --footer-link: #93c5fd;
@@ -853,6 +859,49 @@ body.dark-mode .section-title p,
 body.dark-mode .resume .resume-item h5,
 body.dark-mode .contact .info p,
 body.dark-mode .contact .info h4 {
+  color: #ffffff !important;
+}
+
+body.light-mode #about,
+body.light-mode #projects,
+body.light-mode #skills,
+body.light-mode #resume,
+body.light-mode #contact,
+body.light-mode #about p,
+body.light-mode #projects p,
+body.light-mode #skills p,
+body.light-mode #resume p,
+body.light-mode #contact p,
+body.light-mode #about span,
+body.light-mode #projects span,
+body.light-mode #skills span,
+body.light-mode #resume span,
+body.light-mode #contact span,
+body.light-mode #about li,
+body.light-mode #resume li,
+body.light-mode #contact li,
+body.light-mode #about strong,
+body.light-mode #resume strong,
+body.light-mode #contact strong,
+body.light-mode #about em,
+body.light-mode #resume em,
+body.light-mode #contact em,
+body.light-mode #about h2,
+body.light-mode #about h3,
+body.light-mode #projects h2,
+body.light-mode #projects h3,
+body.light-mode #skills h2,
+body.light-mode #resume h2,
+body.light-mode #resume h3,
+body.light-mode #resume h4,
+body.light-mode #resume h5,
+body.light-mode #contact h2,
+body.light-mode #contact h4,
+body.light-mode .skill-node {
+  color: #0f172a !important;
+}
+
+body.light-mode .skill-node span {
   color: #ffffff !important;
 }
 
@@ -1116,10 +1165,12 @@ section {
 #skills .container,
 #resume .container,
 #contact .container {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
+  background: var(--glass-panel-bg);
+  border: 1px solid var(--glass-panel-border);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--glass-panel-shadow);
   padding-top: 36px;
   padding-bottom: 36px;
 }
@@ -1134,10 +1185,12 @@ section {
 }
 
 .projects .project-card {
-  background: var(--surface-1);
-  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
   padding: 24px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -1328,7 +1381,7 @@ section {
 }
 
 .skill-node span {
-  color: #e2e8f0;
+  color: #ffffff;
   font-size: 0.9rem;
 }
 
@@ -1412,10 +1465,12 @@ section {
 }
 
 .contact .info {
-  background: var(--surface-1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
 .contact .map-embed {

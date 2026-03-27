@@ -14,7 +14,7 @@ a {
 }
 
 a:hover {
-  color: #37b3ed;
+  color: #2b88b4;
   text-decoration: none;
 }
 
@@ -303,7 +303,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -374,93 +374,6 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Facts
---------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
-}
-
-.facts .count-box {
-  padding: 30px;
-  width: 100%;
-}
-
-.facts .count-box i {
-  display: block;
-  font-size: 44px;
-  color: #149ddd;
-  float: left;
-  line-height: 0;
-}
-
-.facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-
-.facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #122f57;
-}
-
-.facts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
-}
-
-.facts .count-box a:hover {
-  color: #1f5297;
-}
-
-/*--------------------------------------------------------------
-# Akills
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
-}
 
 /*--------------------------------------------------------------
 # Resume
@@ -754,39 +667,6 @@ section {
   }
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  padding: 15px;
-  color: #f4f6fd;
-  font-size: 14px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  z-index: 9999;
-  background: #4f0101;
-}
-
-#footer .copyright {
-  text-align: center;
-}
-
-#footer .credits {
-  padding-top: 5px;
-  text-align: center;
-  font-size: 13px;
-  color: #eaebf0;
-}
-
-@media (max-width: 1199px) {
-  #footer {
-    position: static;
-    width: auto;
-    padding-right: 20px 15px;
-  }
-}
 
 /*--------------------------------------------------------------
 # Modern Refresh Overrides
@@ -811,9 +691,6 @@ section {
   --glass-panel-bg: rgba(255, 255, 255, 0.15);
   --glass-panel-border: rgba(255, 255, 255, 0.3);
   --glass-panel-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
-  --footer-bg: #0f172a;
-  --footer-text: #e2e8f0;
-  --footer-link: #bfdbfe;
 }
 
 body.dark-mode {
@@ -836,9 +713,6 @@ body.dark-mode {
   --glass-panel-bg: rgba(15, 23, 42, 0.28);
   --glass-panel-border: rgba(148, 163, 184, 0.25);
   --glass-panel-shadow: 0 8px 32px rgba(2, 6, 23, 0.38);
-  --footer-bg: #020617;
-  --footer-text: #cbd5e1;
-  --footer-link: #93c5fd;
 }
 
 body.dark-mode,
@@ -896,12 +770,11 @@ body.light-mode #resume h3,
 body.light-mode #resume h4,
 body.light-mode #resume h5,
 body.light-mode #contact h2,
-body.light-mode #contact h4,
-body.light-mode .skill-node {
+body.light-mode #contact h4 {
   color: #0f172a !important;
 }
 
-body.light-mode .skill-node span {
+body.light-mode .skill-node  {
   color: #ffffff !important;
 }
 
@@ -962,10 +835,11 @@ h6 {
 }
 
 #header {
-  top: 16px;
+  top: 36px;
   left: 16px;
-  bottom: 16px;
+  bottom: 36px;
   width: 280px;
+  height: 700px;
   padding: 12px 14px;
   background: var(--header-gradient);
   border: 1px solid var(--header-border);
@@ -1141,7 +1015,7 @@ h6 {
 }
 
 section {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .section-bg {
@@ -1168,8 +1042,8 @@ section {
   background: var(--glass-panel-bg);
   border: 1px solid var(--glass-panel-border);
   border-radius: 20px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   box-shadow: var(--glass-panel-shadow);
   padding-top: 36px;
   padding-bottom: 36px;
@@ -1492,17 +1366,6 @@ section {
   color: #fff;
 }
 
-#footer {
-  background: var(--footer-bg);
-  color: var(--footer-text);
-  border-top: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-#footer .credits,
-#footer .credits a {
-  color: var(--footer-link);
-}
-
 @media (max-width: 1199px) {
   .container,
   .container-fluid {
@@ -1514,7 +1377,8 @@ section {
   #projects .container,
   #skills .container,
   #resume .container,
-  #contact .container {
+  #contact .container,
+  #gallery .container {
     border-radius: 14px;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -1523,4 +1387,75 @@ section {
   section {
     padding: 44px 0;
   }
+}
+
+
+  
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+.gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery .gallery-item img {
+  transition: 0.3s;
+}
+
+.gallery .gallery-links {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.gallery .gallery-links .preview-link,
+.gallery .gallery-links .details-link {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  line-height: 1.2;
+  margin: 30px 8px 0 8px;
+}
+
+.gallery .gallery-links .preview-link:hover,
+.gallery .gallery-links .details-link:hover {
+  color: #ffffff;
+}
+
+.gallery .gallery-links .details-link {
+  font-size: 30px;
+  line-height: 0;
+}
+
+.gallery .gallery-item:hover .gallery-links {
+  opacity: 1;
+}
+
+.gallery .gallery-item:hover .preview-link,
+.gallery .gallery-item:hover .details-link {
+  margin-top: 0;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.glightbox-clean .gslide-description {
+  background: #272727;
+}
+
+.glightbox-clean .gslide-title {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
 }

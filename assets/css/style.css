@@ -14,7 +14,7 @@ a {
 }
 
 a:hover {
-  color: #37b3ed;
+  color: #2b88b4;
   text-decoration: none;
 }
 
@@ -304,7 +304,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -375,93 +375,6 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Facts
---------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
-}
-
-.facts .count-box {
-  padding: 30px;
-  width: 100%;
-}
-
-.facts .count-box i {
-  display: block;
-  font-size: 44px;
-  color: #149ddd;
-  float: left;
-  line-height: 0;
-}
-
-.facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-
-.facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #122f57;
-}
-
-.facts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
-}
-
-.facts .count-box a:hover {
-  color: #1f5297;
-}
-
-/*--------------------------------------------------------------
-# Akills
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
-}
 
 /*--------------------------------------------------------------
 # Resume
@@ -571,141 +484,11 @@ section {
   padding-top: 5px;
 }
 
-.contact .info .social-links {
-  padding-left: 60px;
-}
-
-.contact .info .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-  margin-right: 10px;
-}
-
-.contact .info .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
-}
-
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
   background: #149ddd;
   color: #fff;
-}
-
-.contact .php-email-form {
-  width: 100%;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form .form-group {
-  margin-bottom: 15px;
-}
-
-.contact .php-email-form label {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input {
-  height: 44px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 15px;
-}
-
-.contact .php-email-form button[type=submit] {
-  background: #149ddd;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: #37b3ed;
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*--------------------------------------------------------------
@@ -755,39 +538,6 @@ section {
   }
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  padding: 15px;
-  color: #f4f6fd;
-  font-size: 14px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  z-index: 9999;
-  background: #4f0101;
-}
-
-#footer .copyright {
-  text-align: center;
-}
-
-#footer .credits {
-  padding-top: 5px;
-  text-align: center;
-  font-size: 13px;
-  color: #eaebf0;
-}
-
-@media (max-width: 1199px) {
-  #footer {
-    position: static;
-    width: auto;
-    padding-right: 20px 15px;
-  }
-}
 
 /*--------------------------------------------------------------
 # Modern Refresh Overrides
@@ -812,9 +562,6 @@ section {
   --glass-panel-bg: rgba(255, 255, 255, 0.15);
   --glass-panel-border: rgba(255, 255, 255, 0.3);
   --glass-panel-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
-  --footer-bg: #0f172a;
-  --footer-text: #e2e8f0;
-  --footer-link: #bfdbfe;
 }
 
 body.dark-mode {
@@ -837,9 +584,6 @@ body.dark-mode {
   --glass-panel-bg: rgba(15, 23, 42, 0.28);
   --glass-panel-border: rgba(148, 163, 184, 0.25);
   --glass-panel-shadow: 0 8px 32px rgba(2, 6, 23, 0.38);
-  --footer-bg: #020617;
-  --footer-text: #cbd5e1;
-  --footer-link: #93c5fd;
 }
 
 body.dark-mode,
@@ -897,12 +641,11 @@ body.light-mode #resume h3,
 body.light-mode #resume h4,
 body.light-mode #resume h5,
 body.light-mode #contact h2,
-body.light-mode #contact h4,
-body.light-mode .skill-node {
+body.light-mode #contact h4 {
   color: #0f172a !important;
 }
 
-body.light-mode .skill-node span {
+body.light-mode .skill-node  {
   color: #ffffff !important;
 }
 
@@ -963,8 +706,12 @@ h6 {
 }
 
 #header {
-  top: 16px;
+  top: 36px;
   left: 16px;
+  bottom: 36px;
+  width: 280px;
+  height: 700px;
+  padding: 12px 14px;
   bottom: 16px;
   width: 232px;
   padding: 12px 10px;
@@ -1199,7 +946,7 @@ h6 {
 }
 
 section {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .section-bg {
@@ -1226,8 +973,8 @@ section {
   background: var(--glass-panel-bg);
   border: 1px solid var(--glass-panel-border);
   border-radius: 20px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   box-shadow: var(--glass-panel-shadow);
   padding-top: 36px;
   padding-bottom: 36px;
@@ -1259,8 +1006,14 @@ section {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 16px;
+  transition: transform 0.35s ease;
 }
 
+.projects .project-media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
 .projects .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 26px rgba(15, 23, 42, 0.1);
@@ -1270,38 +1023,66 @@ section {
   margin-bottom: 10px;
 }
 
-.projects .project-card p {
-  color: var(--text-2);
-  margin-bottom: 18px;
+.projects .project-media-links {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.projects .project-link {
+.projects .project-media-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-weight: 600;
   color: #fff;
-  background: linear-gradient(90deg, var(--brand-500), #3b82f6);
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(15, 23, 42, 0.42);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  margin-top: 30px;
+  transition: 0.3s;
 }
 
-.projects .project-links {
-  display: flex;
-  gap: 10px;
-}
-
-.projects .project-link.github {
-  background: linear-gradient(90deg, #0f172a, #334155);
-}
-
-.projects .project-link:hover {
+.projects .project-media-link:hover {
   color: #fff;
-  background: linear-gradient(90deg, var(--brand-600), var(--brand-500));
+  background: var(--brand-500);
+  border-color: rgba(96, 165, 250, 0.9);
 }
 
-.projects .project-link.github:hover {
-  background: linear-gradient(90deg, #020617, #1e293b);
+.projects .project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.1);
+}
+
+.projects .project-card:hover .project-media-links {
+  opacity: 1;
+}
+
+.projects .project-card:hover .project-media-link {
+  margin-top: 0;
+}
+
+.projects .project-card:hover .project-image {
+  transform: scale(1.06);
+}
+
+.projects .project-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.projects .project-card p {
+  color: var(--text-2);
+  margin-bottom: 18px;
 }
 
 .skills-orbit {
@@ -1544,11 +1325,82 @@ section {
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
-.contact .map-embed {
-  border: 0;
+.contact .php-email-form {
   width: 100%;
-  height: 270px;
-  border-radius: 14px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.contact .php-email-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact .php-email-form label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 12px;
+  box-shadow: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #0f172a;
+}
+
+.contact .php-email-form input {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 15px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--brand-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.contact .php-email-form button[type=submit] {
+  background: linear-gradient(90deg, var(--brand-500), #3b82f6);
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: linear-gradient(90deg, var(--brand-600), var(--brand-500));
+}
+
+body.dark-mode .contact .php-email-form label,
+body.dark-mode .contact .php-email-form input,
+body.dark-mode .contact .php-email-form textarea {
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact .php-email-form input,
+body.dark-mode .contact .php-email-form textarea {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: rgba(148, 163, 184, 0.45);
+}
+
+body.dark-mode .contact .php-email-form input::placeholder,
+body.dark-mode .contact .php-email-form textarea::placeholder {
+  color: rgba(226, 232, 240, 0.85);
 }
 
 .contact .info i {
@@ -1561,17 +1413,6 @@ section {
 .contact .info .phone:hover i {
   background: var(--brand-500);
   color: #fff;
-}
-
-#footer {
-  background: var(--footer-bg);
-  color: var(--footer-text);
-  border-top: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-#footer .credits,
-#footer .credits a {
-  color: var(--footer-link);
 }
 
 @media (max-width: 1199px) {
@@ -1594,4 +1435,14 @@ section {
   section {
     padding: 44px 0;
   }
+}
+
+
+.glightbox-clean .gslide-description {
+  background: #272727;
+}
+
+.glightbox-clean .gslide-title {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
 }

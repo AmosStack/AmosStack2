@@ -375,6 +375,41 @@ section {
   margin-bottom: 0;
 }
 
+.about-resume-download {
+  margin-top: 18px;
+}
+
+.resume-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--brand-500), var(--brand-600));
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  box-shadow: 0 8px 20px rgba(14, 116, 144, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.resume-download-btn:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(14, 116, 144, 0.35);
+  filter: saturate(1.08);
+}
+
+.resume-download-btn:focus-visible {
+  outline: 3px solid rgba(20, 157, 221, 0.45);
+  outline-offset: 3px;
+}
+
+.resume-download-btn i {
+  font-size: 1rem;
+}
+
 
 /*--------------------------------------------------------------
 # Resume
